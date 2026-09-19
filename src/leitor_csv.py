@@ -1,6 +1,4 @@
-##Código para abrir e ler o doc csv##  
-## Seu objetivo aqui é criar uma função que abra o arquivo data/dataset.csv, pegue a coluna que você quer pesquisar (por exemplo, o nome do jogo) e retorne isso como uma lista no Python.##
-##Importante: Use "with open" para garantir que o arquivo seja fechado corretamente!##
+##Código para abrir e ler o doc csv##
 
 import csv
 
@@ -12,17 +10,17 @@ class leitor:
             self.nome_jogos = []
             for i,jogo in enumerate(arquivo_csv):
                 if i == 0:
-                    self.nome_jogos.append(jogo[2])
+                    pass #pula o cabeçalho e adiciona somente os jogos
                 else:
-                    self.nome_jogos.append(jogo[2])
+                    self.nome_jogos.append(jogo[2]) #Adiciona os jogos na lista, buscando exatamente a terceira coluna do arquivo csv
 
     def buscar_jogo(self):
-        # primeiro = self.nome_jogos[61]
-        # segundo = self.nome_jogos[62]
-        # terceiro = self.nome_jogos[63]
-        # quarto = self.nome_jogos[3]
-        # print(primeiro,'/',segundo,'/',terceiro,'/',quarto)
-        print(self.nome_jogos)
+        primeiro = self.nome_jogos[0]
+        segundo = self.nome_jogos[1]
+        terceiro = self.nome_jogos[2]
+        quarto = self.nome_jogos[3]
+        print(primeiro,'/',segundo,'/',terceiro,'/',quarto)
+        # print(self.nome_jogos)
 
 c1=leitor()
 c1.buscar_jogo()
